@@ -111,8 +111,8 @@ build_state: ;
 clean:
 	rm -f $(obj) glava glad.o build_state
 
-EXECTARGET = $(shell readlink -m "$(DESTDIR)$(EXECDIR)/glava")
-SHADERTARGET = $(shell readlink -m "$(DESTDIR)$(SHADERDIR)")
+EXECTARGET = $(shell readlink -n "$(DESTDIR)$(EXECDIR)/glava")
+SHADERTARGET = $(shell readlink -n "$(DESTDIR)$(SHADERDIR)")
 
 .PHONY: install
 install:

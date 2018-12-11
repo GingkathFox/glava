@@ -118,10 +118,10 @@ SHADERTARGET = $(shell readlink -n "$(DESTDIR)$(SHADERDIR)")
 install:
 	install -dm755 glava $(EXECTARGET)
 	install -d $(SHADERTARGET)
-	cp -Rv shaders/* $(SHADERTARGET)
+	cp -Rv shaders/* $(SHADERTARGET) # Fix -Rv, cant find anything on MacOS make equiv
 
 .PHONY: uninstall
 uninstall:
-	rm $(EXECTARGET)
+	rm $(EXECTARGET) # Same for both rm
 	rm -rf $(SHADERTARGET)
 

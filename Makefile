@@ -116,7 +116,7 @@ SHADERTARGET = $(shell readlink -n "$(DESTDIR)$(SHADERDIR)")
 
 .PHONY: install
 install:
-	install -Dm755 glava $(EXECTARGET)
+	install -dm755 glava $(EXECTARGET)
 	install -d $(SHADERTARGET)
 	cp -Rv shaders/* $(SHADERTARGET)
 
